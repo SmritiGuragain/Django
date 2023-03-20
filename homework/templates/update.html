@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddWork</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <style>
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 4px;
+            
+            padding: 8px;
+        }
+        body {
+            font-family: "Roboto", sans-serif;
+            font-size: 17px;
+            background-color: #fdfdfd;
+        }
+
+    </style>
+    {{ form.media }}
+</head>
+
+<body>
+    
+     <!-- Navigation -->
+    <nav
+    class="navbar navbar-expand-lg navbar-dark bg-dark shadow"
+    id="mainNav"
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Homework Central</a>
+  </nav>
+    <div>
+        <form method='POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            <label>Title</label>
+            {{form.Title}}
+
+            <label>Semester</label>
+            {{form.Semester}}
+            <br>
+            <h3>Description</h3>
+            {{form.Description}}
+            <br>
+            <label>Choose File</label>
+            <br>
+            {{form.work}}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+</html>

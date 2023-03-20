@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Homework-Central</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+      rel="stylesheet"
+    />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 17px;
+        background-color: #fdfdfd;
+      }
+      nav {
+        position: fixed;
+      }
+      .shadow {
+        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+      }
+
+      .btn-danger {
+        color: #fff;
+        background-color: #f00000;
+        border-color: #dc281e;
+      }
+
+      .masthead {
+        background: #3398e1;
+        height: auto;
+        padding-bottom: 15px;
+        box-shadow: 0 16px 48px #e3e7eb;
+        padding-top: 10px;
+      }
+
+      .head_text {
+        color: white;
+      }
+
+      .card {
+        box-shadow: 0 16px 48px #e3e7eb;
+      }
+    </style>
+
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark shadow"
+      id="mainNav"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Homework Central</a>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            {% if user.is_authenticated %}
+            <li class="nav-item text-black">
+              <a class="nav-link text-black font-weight-bold" href="/addwork"
+                >Add Work</a
+              >
+            </li>
+            <li class="nav-item text-black">
+              <a class="nav-link text-black font-weight-bold" href="/logout"
+                >Logout</a
+              >
+            </li>
+            {% else %}
+            <li class="nav-item text-black">
+              <a class="nav-link text-black font-weight-bold" href="/login"
+                >Login</a
+              >
+            </li>
+            {% endif %}
+            <li class="nav-item text-black">
+              <a class="nav-link text-black font-weight-bold" href=""
+                >Hello<br><u>{{user}}</u></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <a href="/first">
+      <img src="{% static 'images/1S.jpg' %}" width="300" height="300"/></a>
+    <a href="/second">
+      <img src="{% static 'images/2S.jpg' %}" width="300" height="300"
+    /></a>
+    <a href="/third">
+      <img src="{% static 'images/3S.jpg' %}" width="300" height="300"
+    /></a>
+    <a href="/fourth">
+      <img src="{% static 'images/4S.jpg' %}" width="300" height="300"
+    /></a>
+    <a href="/fifth">
+      <img src="{% static 'images/5S.jpg' %}" width="300" height="300"
+    /></a>
+    <a href="/sixth">
+      <img src="{% static 'images/6S.jpg' %}" width="300" height="300"
+    /></a>
+    <a href="/seventh">
+      <img src="{% static 'images/7S.jpg' %}" width="300" height="300"
+    /></a>
+    <a href="/eighth">
+      <img src="{% static 'images/8S.jpg' %}" width="300" height="300"
+    /></a>
+  </body>
+</html>
