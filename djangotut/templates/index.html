@@ -1,0 +1,63 @@
+
+<!-- CSS Code: Place this code in the document's head (between the 'head' tags) -->
+<style>
+  table.GeneratedTable {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #ffcc00;
+    border-style: solid;
+    color: #000000;
+  }
+
+  table.GeneratedTable td,
+  table.GeneratedTable th {
+    border-width: 2px;
+    border-color: #ffcc00;
+    border-style: solid;
+    padding: 3px;
+  }
+
+  table.GeneratedTable thead {
+    background-color: #ffcc00;
+  }
+</style>
+
+<!-- HTML Code: Place this code in the document's body (between the 'body' tags) where the table should appear -->
+<table class="GeneratedTable">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Contact</th>
+      <th>BloodGroup</th>
+      <th>AltContact</th>
+      <th>Address</th>
+      <th>Medical History</th>
+      <th>Marital Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <a href="add/"><button type="button" class="btn btn-danger">Add</button></a>
+    {% for doners in model %}
+    <tr>
+      <td>{{doners.id}}</td>
+      <td>{{doners.Name}}</td>
+      <td>{{doners.Age}}</td>
+      <td>{{doners.Contact}}</td>
+      <td>{{doners.bloodgroup}}</td>
+      <td>{{doners.AltContact}}</td>
+      <td>{{doners.Address}}</td>
+      <td>{{doners.premedhis}}</td>
+      <td>{{doners.maritalstatus}}</td>
+      <td>
+        <a href="delete/{{doners.id}}"><button type="button" class="btn btn-danger">Delete</button></a>
+        <a href="update/{{doners.id}}"><button type="button" class="btn btn-danger">Update</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<!-- Codes by Quackit.com -->
