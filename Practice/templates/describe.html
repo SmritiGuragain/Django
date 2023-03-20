@@ -1,0 +1,25 @@
+{% include "nav.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+</head>
+<body>
+    {% csrf_token %}
+    {{modulo.Name}}
+    <br>
+    <hr>
+    <img src="{{modulo.Photo.url}}" width="75%">
+    <hr>
+    {{modulo.Description|safe}}
+    <hr>
+    {{modulo.Created}}
+    <br>
+    <hr>
+    <a href="/delete/{{modulo.id}}"><button>Delete</button></a>
+    <a href="/update/{{modulo.id}}"><button>Update</button></a>
+</body>
+</html>

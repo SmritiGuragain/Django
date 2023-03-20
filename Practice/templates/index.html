@@ -1,0 +1,35 @@
+{% include "nav.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+</style>
+</head>
+<body>
+    <h3>Select category</h3>
+    <a href="/certificate"><button>Certificate</button></a>
+    <a href="/cat"><button>Cat</button></a><hr>
+    {% for x in modela %}
+    {% csrf_token %}
+    <div class="gallery">
+        <a href="/describe/{{x.id}}"><img src="{{ x.Photo.url }}" width="600" height="400"></a>
+        {{x.Created}}
+    </div>
+    {% endfor %}
+</body>
+</html>
