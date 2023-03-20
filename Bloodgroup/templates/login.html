@@ -1,0 +1,21 @@
+<h1>Login Form</h1>
+<body>
+	{% for message in messages %}
+	   <p id="messages" >{{message}}</p>
+	 {% endfor %}
+	 <br>
+<form method="POST">
+	{% csrf_token %}
+	<label>Username</label>
+	<input type="text" name="username">
+	<br>
+	<hr>
+	<label>Password:</label>
+	<input type="password" name="password">
+	<br>
+	<hr>
+	<input type ="submit">
+</form>
+<h2>Does not have a account?</h2>
+<a href="/signup"><button>Signup</button></a>
+</body>
